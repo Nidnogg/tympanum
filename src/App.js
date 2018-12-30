@@ -33,7 +33,7 @@ class ButtonGrid extends Component {
   render() {
     return (
       <Grid>
-        <Button onClick={this.playAudio} color="#789DAF"></Button>
+        <Button color="#789DAF"></Button>
         <Button color="#D08DBE"></Button>
         <Button color="#7E965A"></Button>
         <Button color="#A24545"></Button>
@@ -41,7 +41,7 @@ class ButtonGrid extends Component {
     );
   }
 } 
-/*
+
 class Button extends Component {
   constructor() {
     super();
@@ -49,11 +49,17 @@ class Button extends Component {
   }
 
   playAudio() {
-    alert('rola');
+    alert('Button clicked');
+  }
+
+  render() {
+    return  (
+      <StyledButton color={this.props.color} onClick={this.playAudio} />
+    );
   }
 }
-*/
-const Button = styled.div`
+
+const StyledButton = styled.div`
   background-color: ${props => props.color}
   width: 4.0em;
   height: 4.0em;
