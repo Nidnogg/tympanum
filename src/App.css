@@ -1,7 +1,20 @@
+/*
+Base Color palette:
+#FCEFDF background
+#F6E6D3 darker-background
+#789DAF button1
+#D08DBE button2
+#7E965A button3
+#A24545 button4
+#707070 text and button
+*/
+
 * {
   box-sizing: border-box;
 }
-
 body {
+  background-color: #FCEFDF;
+  color: #707070;
+  font-size: 1.5rem;
   text-align: center;
 }
