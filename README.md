@@ -1,3 +1,22 @@
+## initial app structure
+```
+<Header>
+  <Title />
+  <Nav />
+</Header>
+<ButtonGrid>
+  <Button />
+  <Button />
+  <Button />
+  <Button />
+</ButtonGrid>
+<ControllerGrid>
+  <Control />
+  <Control />
+  <Control />
+</ControllerGrid>  
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
