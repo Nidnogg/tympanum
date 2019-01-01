@@ -29,8 +29,8 @@ class ButtonGrid extends Component {
   render() {
     return (
       <Grid>
-        <Button color="#789DAF" audioUrl="D:\localdev\tympanum\src\audio"></Button>
-        <Button color="#D08DBE" audioUrl="https://jp4pnq.dm.files.1drv.com/y4mSWJsaDJii2wlqCTS8ttXuBfA76DIgjN1N-1fGCYKLWDiHh-xo-YK1TtNWV6fgVKRsyOhdYa_vzUAu7LDMQtKE-E4qJoPTW2ioyHtQljF7P2k5dRS7Eea8wFFWLEFGHkEtg81Avv0pCjz_AXKheEAOaykSS-0bc_0A7YTRxLTAlPCvKcvLtbQ1FmA-flq4YO0zL3zLXCyMBfA8-wGlyrAAA?authkey=!AP3BY0zrzMtoIxk"></Button>
+        <Button color="#789DAF" audioUrl="https://firebasestorage.googleapis.com/v0/b/cloudtop-nidnogg.appspot.com/o/audio%2Ftest.mp3?alt=media&token=c0ca5d7b-abcf-43c7-87af-764393e539af"></Button>
+        <Button color="#D08DBE" audioUrl="https://firebasestorage.googleapis.com/v0/b/cloudtop-nidnogg.appspot.com/o/audio%2Ftest.mp3?alt=media&token=c0ca5d7b-abcf-43c7-87af-764393e539af"></Button>
         <Button color="#7E965A" audioUrl="./public/audio/htom_med.mp3"></Button>
         <Button color="#A24545" audioUrl="./public/audio/htom_med.mp3"></Button>
       </Grid>
@@ -41,11 +41,14 @@ class ButtonGrid extends Component {
 class Button extends Component {
   constructor(props) {
     super(props);
+
+    // Audio props
     this.audio = new Audio(this.props.audioUrl);
-    this.audio.type = 'audio/mp3';
     
     // Initial state
-    this.state = { play: false };
+    this.state = { 
+      play: false 
+    };
 
     // Function Binds
     this.playAudio = this.playAudio.bind(this);
