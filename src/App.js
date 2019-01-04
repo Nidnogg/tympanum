@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import './css/App.css';
 import styled from 'styled-components';
+import {Howl, Howler} from 'howler';
 
-// for trying out audio Imports
-//import playAudio from './controllers.js';
+
+// Note that this only works with object destructuring
+import { playSound } from './controllers.js';
 
 
 class App extends Component {
@@ -17,6 +19,8 @@ class App extends Component {
   }
 }
 
+
+
 const Title = styled.h2`
   display: flex;
   padding: 1.5vw 0 0 1.5vw ;
@@ -27,14 +31,16 @@ const Title = styled.h2`
 class ButtonGrid extends Component {
   constructor() {
     super();
+
   }
+
   render() {
     return (
       <Grid>
         <Button color="#789DAF" audioUrl="https://firebasestorage.googleapis.com/v0/b/cloudtop-nidnogg.appspot.com/o/audio%2Ftest.mp3?alt=media&token=c0ca5d7b-abcf-43c7-87af-764393e539af"></Button>
         <Button color="#D08DBE" audioUrl="https://firebasestorage.googleapis.com/v0/b/cloudtop-nidnogg.appspot.com/o/audio%2Ftest.mp3?alt=media&token=c0ca5d7b-abcf-43c7-87af-764393e539af"></Button>
-        <Button color="#7E965A" audioUrl="./audio/test.mp3"></Button>
-        <Button color="#A24545" audioUrl="./audio/test.mp3"></Button>
+        <Button color="#7E965A" audioUrl="https://firebasestorage.googleapis.com/v0/b/cloudtop-nidnogg.appspot.com/o/audio%2Ftest.mp3?alt=media&token=c0ca5d7b-abcf-43c7-87af-764393e539af"></Button>
+        <Button color="#A24545" audioUrl="https://firebasestorage.googleapis.com/v0/b/cloudtop-nidnogg.appspot.com/o/audio%2Ftest.mp3?alt=media&token=c0ca5d7b-abcf-43c7-87af-764393e539af"></Button>
       </Grid>
     );
   }
@@ -45,26 +51,24 @@ class Button extends Component {
     super(props);
 
     // Audio props
-    this.audio = new Audio(this.props.audioUrl);
-    
+    this.audio = new Howl({
+      src: [this.props.audioUrl],
+      onend: () => console.log('finished playing audio')
+    });
     // Initial state
     this.state = { 
       play: false 
     };
-
     // Function Binds
     this.playAudio = this.playAudio.bind(this);
   }
 
   playAudio() {
-    console.log(this.props.audioUrl);   
-    console.log(`this.audio: ${this.audio}`);
-    this.setState({play: !this.state.play});
-    this.state.play ? this.audio.play() : this.audio.pause();
+    this.audio.play();
   }
-
   render() {
-    return  (
+    return  ( 
+      // onClick goes here
       <StyledButton color={this.props.color} onClick={this.playAudio} />
     );
   }
