@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './css/App.css';
 import styled from 'styled-components';
-import { playAudio } from './controllers.js';
+
+// for trying out audio Imports
+//import playAudio from './controllers.js';
+
 
 class App extends Component {
   render() {
@@ -31,8 +33,8 @@ class ButtonGrid extends Component {
       <Grid>
         <Button color="#789DAF" audioUrl="https://firebasestorage.googleapis.com/v0/b/cloudtop-nidnogg.appspot.com/o/audio%2Ftest.mp3?alt=media&token=c0ca5d7b-abcf-43c7-87af-764393e539af"></Button>
         <Button color="#D08DBE" audioUrl="https://firebasestorage.googleapis.com/v0/b/cloudtop-nidnogg.appspot.com/o/audio%2Ftest.mp3?alt=media&token=c0ca5d7b-abcf-43c7-87af-764393e539af"></Button>
-        <Button color="#7E965A" audioUrl="./public/audio/htom_med.mp3"></Button>
-        <Button color="#A24545" audioUrl="./public/audio/htom_med.mp3"></Button>
+        <Button color="#7E965A" audioUrl="./audio/test.mp3"></Button>
+        <Button color="#A24545" audioUrl="./audio/test.mp3"></Button>
       </Grid>
     );
   }
@@ -52,7 +54,6 @@ class Button extends Component {
 
     // Function Binds
     this.playAudio = this.playAudio.bind(this);
-    
   }
 
   playAudio() {

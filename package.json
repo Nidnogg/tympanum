@@ -1,26 +1,30 @@
 {
   "name": "tympanum",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "A web app for learning finger drumming and React",
+  "main": "./public/index.html",
+  "scripts": {
+    "dev": "parcel ./public/index.html",
+    "build": "parcel build ./public/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nidnogg/tympanum.git"
+  },
+  "author": "Nidnogg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nidnogg/tympanum/issues"
+  },
+  "homepage": "https://github.com/Nidnogg/tympanum#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.4.4",
+    "parcel-bundler": "^1.11.0"
+  },
   "dependencies": {
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-scripts": "2.1.2",
     "styled-components": "^4.1.3"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  }
 }

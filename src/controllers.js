@@ -1,5 +1,5 @@
 /*
-  For functions 
+  For general use functions 
 */
 
 export const playAudio = () =>  {
